@@ -21,7 +21,7 @@ const SimpleMap = ({ coord }) => {
       }}
       style={{
         width: "100%",
-        height: "290",
+        height: "270",
         default: { outline: "none" },
         hover: { outline: "none" },
         pressed: { outline: "none" },

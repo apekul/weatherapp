@@ -56,8 +56,9 @@ const SearchBox = ({ setCity, city }) => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [searchRef]);
+
   return (
-    <div className="flex items-center justify-between pt-2 sm:pt-5 max-w-7xl m-auto sm:mb-10">
+    <div className="flex items-center justify-between pt-2 sm:pt-5 max-w-7xl m-auto sm:mb-5">
       <div className="hidden sm:flex items-center justify-center gap-1">
         <TiWeatherPartlySunny className="text-xl" />
         <p>Weather</p>
