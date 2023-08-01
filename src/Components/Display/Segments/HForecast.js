@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import moment from "moment";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import ScrollContainer from "react-indiana-drag-scroll";

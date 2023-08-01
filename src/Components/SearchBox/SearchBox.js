@@ -13,7 +13,6 @@ import cityList from "../../city.list.json";
 
 const SearchBox = ({ setCity, city }) => {
   const [curr, setCurr] = useState("Celsius");
-  const [input, setInput] = useState();
   const [cities, setCities] = useState([]);
   const [showSearch, setShowSearch] = useState(false);
   const searchRef = useRef(null);
