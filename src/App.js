@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import Display from "./Components/Display/Display";
+import SearchBox from "./Components/SearchBox/SearchBox";
+import { fakeData } from "./fakeData";
+const API_KEY = process.env.REACT_APP_API_KEY;
 
 function App() {
+  const [data, setData] = useState();
+  const [city, setCity] = useState();
+
+  useEffect(() => {
+    if (city) {
+      setData(fakeData);
+      fetch(
+        `https://api.openweathermap.org/data/2.5/forecast?lat=${city.coord.lat}&lon=${city.coord.lon}&appid=${API_KEY}&units=metric`
+      )
+        .then((res) => res.json())
+        .then((res) => setData(res))
+        .catch((error) => console.log(error));
+    }
+  }, [city]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="min-h-screen bg-slate-900 text-gray-100 sm:px-10 px-5 ">
+      <SearchBox setCity={setCity} city={city} />
+      {data && <Display data={data} />}
     </div>
   );
 }
