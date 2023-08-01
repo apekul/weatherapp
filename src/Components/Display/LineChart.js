@@ -5,7 +5,6 @@ import {
   CategoryScale, // x axis
   LinearScale, // y axis
   PointElement,
-  Tooltip,
   TimeScale,
 } from "chart.js";
 import "chartjs-adapter-date-fns";
@@ -17,7 +16,6 @@ ChartJS.register(
   TimeScale,
   LinearScale,
   PointElement
-  // Tooltip
 );
 
 const LineChart = ({ weather, chartKey }) => {
