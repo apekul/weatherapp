@@ -16,15 +16,12 @@ const SimpleMap = ({ coord }) => {
       projection="geoMercator"
       projectionConfig={{
         center: [coord.lon, coord.lat],
-        scale: 1100,
+        scale: 600,
         fill: "red",
       }}
       style={{
         width: "100%",
         height: "270",
-        default: { outline: "none" },
-        hover: { outline: "none" },
-        pressed: { outline: "none" },
       }}
     >
       <Geographies geography={geoUrl} fill={"#020617"}>
@@ -33,6 +30,8 @@ const SimpleMap = ({ coord }) => {
             <Geography
               key={geo.rsmKey}
               geography={geo}
+              stroke="#232323"
+              strokeWidth="2"
               style={{
                 default: { outline: "none" },
                 hover: { outline: "none" },

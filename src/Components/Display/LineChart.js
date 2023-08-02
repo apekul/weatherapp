@@ -6,6 +6,7 @@ import {
   LinearScale, // y axis
   PointElement,
   TimeScale,
+  Tooltip,
 } from "chart.js";
 import "chartjs-adapter-date-fns";
 import { Line } from "react-chartjs-2";
@@ -15,7 +16,8 @@ ChartJS.register(
   CategoryScale,
   TimeScale,
   LinearScale,
-  PointElement
+  PointElement,
+  Tooltip
 );
 
 const LineChart = ({ weather, chartKey }) => {
@@ -28,7 +30,6 @@ const LineChart = ({ weather, chartKey }) => {
     if (chartKey === "pressure") return pressure;
     return roundedWeather;
   };
-
   const data = {
     labels: weather.list.map((v, i) => v.dt_txt),
     datasets: [
@@ -44,6 +45,21 @@ const LineChart = ({ weather, chartKey }) => {
   };
   const options = {
     maintainAspectRatio: false,
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (context) {
+            if (chartKey === "humidity") {
+              return context.formattedValue + "%";
+            }
+            if (chartKey === "pressure") {
+              return context.formattedValue + "hPa";
+            }
+            return context.formattedValue + "°C";
+          },
+        },
+      },
+    },
     scales: {
       x: {
         type: "time",

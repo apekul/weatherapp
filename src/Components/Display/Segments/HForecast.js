@@ -1,18 +1,17 @@
 import React from "react";
 import moment from "moment";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
-import ScrollContainer from "react-indiana-drag-scroll";
 
 const HForecast = ({ data }) => {
-  // const slideLeft = () => {
-  //   let slider = document.getElementById("slider");
-  //   slider.scrollLeft = slider.scrollLeft - 500;
-  // };
+  const slideLeft = () => {
+    let slider = document.getElementById("slider");
+    slider.scrollLeft = slider.scrollLeft - 500;
+  };
 
-  // const slideRight = () => {
-  //   let slider = document.getElementById("slider");
-  //   slider.scrollLeft = slider.scrollLeft + 500;
-  // };
+  const slideRight = () => {
+    let slider = document.getElementById("slider");
+    slider.scrollLeft = slider.scrollLeft + 500;
+  };
 
   return (
     <div className="bg-slate-800 md:col-span-2 rounded-2xl text-start sm:px-5 flex flex-col select-none">
@@ -21,11 +20,11 @@ const HForecast = ({ data }) => {
       </p>
       <div className="flex items-center justify-center gap-2 h-full">
         <FaAngleLeft
-          size="50"
+          size="80"
           className="cursor-pointer hidden sm:block"
-          // onClick={() => slideLeft()}
+          onClick={() => slideLeft()}
         />
-        <ScrollContainer
+        <div
           id="slider"
           className="flex cursor-grab h-full text-slate-200 font-bold rounded-2xl overflow-x-scroll scroll scrollbar-hide whitespace-nowrap scroll-smooth items-center sm:justify-start "
         >
@@ -42,8 +41,6 @@ const HForecast = ({ data }) => {
                   </div>
                 </div>
               )}
-              {/* Dawn */}
-              {}
               <div className="flex flex-col items-center justify-center h-full w-full px-5 text-slate-200">
                 <p>{moment(v.dt_txt).format("h:mm a")}</p>
                 <p className="text-xs text-slate-400">
@@ -59,11 +56,11 @@ const HForecast = ({ data }) => {
               </div>
             </div>
           ))}
-        </ScrollContainer>
+        </div>
         <FaAngleRight
-          size="50"
+          size="80"
           className="cursor-pointer hidden sm:block"
-          // onClick={() => slideRight()}
+          onClick={() => slideRight()}
         />
       </div>
     </div>

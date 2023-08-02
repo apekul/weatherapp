@@ -93,7 +93,7 @@ const SearchBox = ({ setCity, city }) => {
         </div>
 
         {/* C/F */}
-        <div className="hidden bg-slate-900 w-fit h-10 rounded-full sm:flex px-0.5 items-center justify-between border border-slate-700 relative select-none">
+        {/* <div className="hidden bg-slate-900 w-fit h-10 rounded-full sm:flex px-0.5 items-center justify-between border border-slate-700 relative select-none">
           <div
             className={`bg-slate-100 w-11 h-9 rounded-full absolute transition ease-in-out ${
               curr === "Celsius" ? "translate-x-0" : "translate-x-11"
@@ -117,7 +117,7 @@ const SearchBox = ({ setCity, city }) => {
           >
             F°
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
