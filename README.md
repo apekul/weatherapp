@@ -7,8 +7,8 @@ Current and forecast weather application
 
 - Current and forecast weather 
 - City search
-- 3 weather charts
-- display location on map
+- Weather charts
+- Map location display
 
 
 ## Demo
@@ -23,5 +23,4 @@ React, TailwindCSS, Momentjs, Chartjs, ReactSimpleMaps, OpenWeatherAPI
 
 ## Screenshot
 
-![Screenshot 2023-08-01 175258](https://github.com/apekul/weatherapp/assets/22819317/91c45313-6181-45db-b245-0c3d9f97d834)
-
+![Screenshot 2023-08-07 164326](https://github.com/apekul/weatherapp/assets/22819317/0ea0eb15-26af-4ada-bfb0-56db38aba6b1)
