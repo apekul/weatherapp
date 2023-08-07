@@ -24,6 +24,23 @@ function App() {
         .catch((error) => console.log(error));
     }
   }, [city]);
+
+  // SetStorage
+  useEffect(() => {
+    if (data) {
+      localStorage.setItem("weather", JSON.stringify([data, pollution]));
+    }
+  }, [data]);
+
+  // GetStorage
+  useEffect(() => {
+    const weather = JSON.parse(localStorage.getItem("weather"));
+    if (weather) {
+      setData(weather[0]);
+      setPollution(weather[1]);
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-slate-900 text-gray-100 sm:px-10 px-5 ">
       <SearchBox setCity={setCity} city={city} />
