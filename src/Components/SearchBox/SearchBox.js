@@ -4,15 +4,7 @@ import { TiWeatherPartlySunny } from "react-icons/ti";
 import { BiSolidMap } from "react-icons/bi";
 import cityList from "../../city.list.json";
 
-// const API_KEY = process.env.REACT_APP_API_KEY;
-
-// const testData = [
-//   { name: "Wars", country: "Elo" },
-//   { name: "Wars2", country: "Elo2" },
-// ];
-
 const SearchBox = ({ setCity, city }) => {
-  const [curr, setCurr] = useState("Celsius");
   const [cities, setCities] = useState([]);
   const [showSearch, setShowSearch] = useState(false);
   const searchRef = useRef(null);
@@ -21,18 +13,10 @@ const SearchBox = ({ setCity, city }) => {
     const { value } = e.target;
     if (value.length > 1) {
       fetchCities(value);
-      // setCities(testData);
     } else setCities([]);
   };
 
   const fetchCities = (value) => {
-    // API Showing wrong coordinates
-    // fetch(
-    //   `http://api.openweathermap.org/geo/1.0/direct?q=${value}&limit=5&appid=${API_KEY}`
-    // )
-    //   .then((res) => res.json())
-    //   .then((res) => setCities(res))
-    //   .catch((err) => console.log(err));
     let arr = [];
     for (let city of cityList) {
       if (arr.length >= 5) break;
@@ -91,33 +75,6 @@ const SearchBox = ({ setCity, city }) => {
             </div>
           )}
         </div>
-
-        {/* C/F */}
-        {/* <div className="hidden bg-slate-900 w-fit h-10 rounded-full sm:flex px-0.5 items-center justify-between border border-slate-700 relative select-none">
-          <div
-            className={`bg-slate-100 w-11 h-9 rounded-full absolute transition ease-in-out ${
-              curr === "Celsius" ? "translate-x-0" : "translate-x-11"
-            }`}
-          ></div>
-          <div
-            onClick={(e) => setCurr(e.currentTarget.id)}
-            id="Celsius"
-            className={`rounded-full w-11 h-9 flex items-center justify-center cursor-pointer transition ease-in-out z-10 ${
-              curr === "Celsius" && "text-black"
-            }`}
-          >
-            C°
-          </div>
-          <div
-            onClick={(e) => setCurr(e.currentTarget.id)}
-            id="Fahrenheit"
-            className={`rounded-full w-11 h-9 flex items-center justify-center cursor-pointer transition ease-in-out z-10 ${
-              curr === "Fahrenheit" && "text-black"
-            }`}
-          >
-            F°
-          </div>
-        </div> */}
       </div>
     </div>
   );
