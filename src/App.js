@@ -7,7 +7,7 @@ function App() {
   const [data, setData] = useState();
   const [pollution, setPollution] = useState();
   const [city, setCity] = useState();
-  const [userLocation, setUserLocation] = useState();
+  // const [userLocation, setUserLocation] = useState();
 
   let options = {
     enableHighAccuracy: true,
@@ -16,8 +16,8 @@ function App() {
   };
 
   function success(pos) {
-    var crd = pos.coords;
-    setUserLocation({ lat: crd.latitude, lon: crd.longitude });
+    // var crd = pos.coords;
+    // setUserLocation({ lat: crd.latitude, lon: crd.longitude });
   }
 
   function errors(err) {
@@ -58,13 +58,15 @@ function App() {
     } else {
       console.log("Geolocation is not supported by this browser.");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
-    let storage = JSON.parse(localStorage.getItem("weather"))[0].city.coord;
+    // let storage = JSON.parse(localStorage.getItem("weather"))[0].city.coord;
     if (city) {
       fetchData(city.coord.lat, city.coord.lon);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [city]);
 
   // SetStorage
