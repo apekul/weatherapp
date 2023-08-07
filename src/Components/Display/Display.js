@@ -6,10 +6,9 @@ import DayForecast from "./Segments/DayForecast";
 import OpenLayersMap from "./Segments/Map/SimpleMap";
 import AirPollution from "./Segments/AirPollution";
 
-const Display = ({ data }) => {
-  console.log(data);
+const Display = ({ data, pollution }) => {
   return (
-    <div className="flex flex-col lg:grid grid-cols-3 grid-rows-3 gap-3 max-w-7xl m-auto pb-5 sm:pb-0">
+    <div className="flex flex-col lg:grid grid-cols-3 grid-rows-4 gap-3 max-w-7xl m-auto pb-5">
       {/* Current Weather */}
       <CurrentWeather data={data} />
 
@@ -26,7 +25,7 @@ const Display = ({ data }) => {
       <DayForecast data={data} />
 
       {/* AirPollution */}
-      {/* <AirPollution data={data} /> */}
+      <AirPollution pollution={pollution} />
     </div>
   );
 };

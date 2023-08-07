@@ -6,7 +6,7 @@ const Overview = ({ data }) => {
 
   return (
     <div className="bg-slate-800 flex justify-start md:col-span-2 rounded-2xl text-start flex-col px-5 p-5 lg:p-2 lg:px-5 h-full">
-      <div className=" items-center justify-center sm:justify-between mb-3 mt-2 flex">
+      <div className=" items-center justify-center sm:justify-between flex">
         <p className="text-slate-100 font-bold hidden sm:block">OVERVIEW</p>
         <div className="flex bg-slate-900 py-1 px-2 text-sm rounded-full relative select-none">
           {/* <div
